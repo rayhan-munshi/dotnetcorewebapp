@@ -36,3 +36,9 @@ steps:
   inputs:
     targetPath: '$(Build.ArtifactStagingDirectory)' 
     artifactName: 'webproj'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'PublishProfile'
+    PublishProfilePath: '$(System.DefaultWorkingDirectory)/**/*.pubxml'
+    PublishProfilePassword: 'FCSrXK7DegqrxfkXKEd4GkWvvwiHMKAmtD2EukmJ7eeiYtSPoX1JmYnd2a20'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
