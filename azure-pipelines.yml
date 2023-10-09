@@ -39,6 +39,7 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'PublishProfile'
+    appType: 'webAppLinux'
     PublishProfilePath: '$(System.DefaultWorkingDirectory)/**/*.PublishSettings'
     PublishProfilePassword: 'FCSrXK7DegqrxfkXKEd4GkWvvwiHMKAmtD2EukmJ7eeiYtSPoX1JmYnd2a20'
     packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
